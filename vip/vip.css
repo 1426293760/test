@@ -1,0 +1,53 @@
+*{margin: 0;padding: 0;}
+div{
+	border: solid 1px red;
+	overflow: hidden;
+}
+.top-nav{
+	height:20px ;
+}
+.head-logo{
+	height:200px ;
+}
+.head-logo-a{
+	height: 100px;
+	width: 140px ;
+}
+.head-logo-b{
+	height: 100px;
+	width: 304px ;
+}
+.focus-banner{
+	height: 392px;
+	padding-top:30px;
+	padding-bottom:20px ;
+	position: relative;
+	margin-bottom:10px ;
+	
+}
+.focus-banner-con{
+	width: 1146px ;
+	height: 400px;
+	margin: 0 auto;
+	position: relative;
+	bottom: 20px;
+}
+.hot-sale-title{
+	text-align: center;
+}
+.operation-warp{
+	height: 814px;
+}
+.operation-w{
+	height: 814px;
+	margin: 0 auto;
+	
+}
+.operation-a{
+	width: 1170px;
+	height: 170px;
+	margin: 0 auto;
+}
+.shop-title{
+	text-align: center;
+}
