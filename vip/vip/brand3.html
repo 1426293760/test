@@ -1,0 +1,135 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>8848钛金手机官网</title>
+		<link href="http://www.8848phone.com/favicon.ico" type="image/x-icon" rel="shortcut icon">
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/top.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/brand.min.css" />
+		<style type="text/css">
+			.article{margin:0 auto 95px;width:1200px;}
+			.clefix {display:block;height:558px;}
+			.first-child{height:907px;}
+			.first-child .conent {padding-top:70px;width:820px;text-align:center;}
+			.article .conent{color:#D9D9D9;}
+			.article .title{margin-bottom:30px;font-size:32px;line-height:48px;color:#D9D9D9;}
+			.article .conent .title{margin-bottom:20px;font-size:32px;line-height:48px;}
+			.article .line{background-color:#D9D9D9;margin:0 0 20px 0;width:32px;height:1px;}
+			.article .conent .line{background-color:#D9D9D9;margin:0 auto 20px;width:32px;height:1px;}
+			.article .conent .description {font-size:17px;line-height:30px;}
+			.col2 .conent{padding:260px 130px 0 80px;width:390px;font-size:17px;line-height:30px;color:#D9D9D9;text-align:justify;}
+			.col2 .icon img{width:600px;}
+			.quotation{height:112px;padding:60px;border-top:1px #1A1919 solid;border-bottom:1px #1A1919 solid;}
+			.quotation .conent{width:1200px;font-size:17px;font-style:italic;line-height:34px;color:#D9D9D9;text-align:center;}
+			.quotation .name{margin-top:10px;padding-right:160px;font-size:17px;font-style:italic;line-height:34px;color:#D9D9D9;text-align:right;}
+			.arcl{height:659px;}
+			.article.col2 .conent{padding:260px 130px 0 80px;width:390px;font-size:17px;line-height:30px;color:#D9D9D9;text-align:justify;}
+			.article.col2 .conent p{margin-bottom:20px;}
+			.article.col2 .icon img{width:600px;}
+			.arcl1{height:558px;}
+			.artfir{height:790px;}
+			.article.first-child .icon img{margin-top:50px;width:1200px;}
+			.article.col2 .description{margin-top:-40px;margin-bottom:50px;font-size:17px;line-height:30px;color:#D9D9D9;}
+			.artcol{height:572.672px;}
+			.artcol1{height:571.750px;}
+		</style>
+	</head>
+
+	<body>
+		<div class="M-header">
+			<div class="row">
+				<a href="index.html" class="logo"></a>
+				<div class="nav">
+					<ul class="active"></ul>
+				</div>
+			</div>
+			<div class="brand-subnav">
+				<div class="subnav">
+					<ul class="clearfix1"></ul>
+				</div>
+			</div>
+		</div>
+		<div class="M-brand3">
+			<div class="b4"></div>
+		</div>
+		<div class="M-footer">
+			<div class="foot-nav">
+				<div class="row clear">
+					<ul class="clear left"></ul>
+					<div class="hotline right"> <label>咨询热线：</label>400-168-8848
+						<p>周一至周日<span>每日8:00-21:00</span>全年无休</p>
+					</div>
+				</div>
+			</div>
+			<div class="copyright">
+				<div class="row clearia">
+					<div class="left"> 北京珠穆朗玛移动通信有限公司 <span>联系电话：010-83189000</span> 京ICP备17002814号-1 京网文[2018]0621-066号 </div>
+				</div>
+			</div>
+		</div>
+		<div class="tools-bar" style="display:block;">
+			<div class="nav">
+				<a href="javascript:void(0);" class="customer"></a>
+				<a href="javascript:void(0);" class="gotop"></a>
+			</div>
+			<div class="nav-content">
+				<div class="customer-qrcode"> <img src="http://www.8848phone.com/public/m3/images/customer_qrcode.png?ver=2"> </div>
+			</div>
+		</div>
+		<div class="gray-bg"></div>
+		<div class="denglu">
+			<div class="inset">
+				<div class="login-head">
+					<h1>登录</h1>
+					<div class="close"></div>
+				</div>
+				<div class="indi">
+					<input maxlength="8" placeholder="账号" autofocus>
+				</div>
+				<div class="indi">
+					<input maxlength="10" type="password" placeholder="密码">
+				</div>
+				<button class="wwc lll">登录</button>
+				<button class="wwc ccc">注册</button>
+			</div>
+		</div>
+		<script src="js/top.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/brand.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$.ajax({
+				type: "get",
+				url: "json/brand3.json",
+				async: false,
+				success: function(data) {
+					$("<div class='article first-child'>").html($("<div class='conent'>").html($("<div class='title'>").html(data.b41Tit))).appendTo(".b4")
+					$("<div class='line'>").appendTo(".conent")
+					$("<div class='description'>").html(data.b41Txt[0]).appendTo(".conent")
+					$("<div class='icon'>").html($("<img src='" + data.b41Img[0] + "'>")).appendTo(".first-child")
+					$("<div class='article col2 clefix'>").html($("<div class='conent left'>").html(data.b41Txt[1])).appendTo(".b4")
+					$("<div class='icon right'>").html($("<img src='" + data.b41Img[1] + "'>")).appendTo(".clefix")
+					$("<div class='article quotation'>").html($("<div class='conent'>").html(data.b41Txt[2])).appendTo(".b4")
+					$("<div class='name'>").html(data.b41Txt[3]).appendTo(".quotation")
+					$("<div class='article col2 arcl'>").html($("<div class='line'>")).appendTo(".b4")
+					$("<div class='title'>").html(data.b42Tit).appendTo(".arcl")
+					$("<div class='clefix'>").html($("<div class='conent right' style='padding-top:160px;'>").html($("<p>").html(data.b42Txt[0]))).appendTo(".arcl")
+					$("<p>").html(data.b42Txt[1]).appendTo(".arcl .conent")
+					$("<div class='icon left'>").html($("<img src='" + data.b42Img[0] + "'>")).appendTo(".arcl .clefix")
+					$("<div class='article col2 arcl1'>").html($("<div class='clefix'>").html($("<div class='conent left' style='padding-top:180px;'>").html($("<p>").html(data.b42Txt[2])))).appendTo(".b4")
+					$("<div class='icon right'>").html($("<img src='" + data.b42Img[1] + "'>")).appendTo(".arcl1 .clefix")
+					$("<div class='article quotation artquo'>").html($("<div class='conent'><span style='font-style:normal;'>" + data.b42Txt[3] + "</span>" + data.b42Txt[4] + "</div>")).appendTo(".b4")
+					$("<div class='name'>").html(data.b42Txt[5]).appendTo(".artquo")
+					$("<div class='article first-child artfir'>").html($("<div class='conent' style='padding-top:0;'>").html($("<div class='line'>"))).appendTo(".b4")
+					$("<div class='title'>").html(data.b43Tit).appendTo(".artfir .conent")
+					$("<div class='icon'>").html($("<img src='" + data.b43Img[0] + "'>")).appendTo(".artfir")
+					$("<div class='article col2 artcol'>").html($("<div class='description'>").html(data.b43Txt[0])).appendTo(".b4")
+					$("<div class='clefix'>").html($("<div class='conent right' style='padding-top:120px;'>").html($("<p>").html(data.b43Txt[1]))).appendTo(".artcol")
+					$("<p>").html(data.b43Txt[2]).appendTo(".artcol .conent")
+					$("<div class='icon left'>").html($("<img src='" + data.b43Img[1] + "'>")).appendTo(".artcol .clefix")
+					$("<div class='article col2 artcol1'>").html($("<div class='clefix'>").html($("<div class='conent left' style='padding-top:220px;'>").html($("<p>").html(data.b43Txt[3])))).appendTo(".b4")
+					$("<div class='icon right'>").html($("<img src='"+data.b43Img[2]+"'>")).appendTo(".artcol1 .clefix")
+				}
+			});
+		</script>
+	</body>
+</html>

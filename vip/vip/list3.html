@@ -1,0 +1,178 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>8848</title>
+		<link href="http://www.8848phone.com/favicon.ico" type="image/x-icon" rel="shortcut icon">
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/top.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/M5.min.css" />
+		<style type="text/css">
+			.M53{padding:0 5%;}
+			.P1{width:100%;height:auto;position:relative;}
+			.M53 img{width:100%;height:auto;vertical-align:middle;}
+			.carousel-inner{width:100%;overflow:hidden;}
+			.lai{width:400%;position:relative;overflow:auto;}
+			.picbo1{width:25%;}
+			.carousel-indicators{position:absolute;left:49%;top:90%;}
+			.opb1{width:12px;height:12px;margin:0 5px;background:url(http://www.8848phone.com/public/m5/images/m5/group13/point.png) no-repeat;display:inline-block;}
+			.next, .prev{top:40%;}
+			.prev{left:8%;}
+			.next{right:8%;}
+			.ErWeiMa{width:100%;height:100%;text-align:center;position:absolute;top:49%;left:0;z-index:999;}
+			.ErWeiMa a{display:inline-block;width:18%;height:18%;cursor:pointer;}
+		</style>
+	</head>
+	<body>
+		<div class="M-header">
+			<div class="row">
+				<a href="index.html" class="logo"></a>
+				<div class="nav">
+					<ul class="active"></ul>
+				</div>
+			</div>
+			<div class="brand-subnav">
+				<div class="subnav">
+					<ul class="clearfix1"></ul>
+				</div>
+			</div>
+		</div>
+		<div class="M53"> </div>
+		<div class="M-footer">
+			<div class="foot-nav">
+				<div class="row clear">
+					<ul class="clear left"></ul>
+					<div class="hotline right"> <label>咨询热线：</label>400-168-8848
+						<p>周一至周日<span>每日8:00-21:00</span>全年无休</p>
+					</div>
+				</div>
+			</div>
+			<div class="copyright">
+				<div class="row clearia">
+					<div class="left"> 北京珠穆朗玛移动通信有限公司 <span>联系电话：010-83189000</span> 京ICP备17002814号-1 京网文[2018]0621-066号 </div>
+				</div>
+			</div>
+		</div>
+		<div class="tools-bar" style="display:block;">
+			<div class="nav">
+				<a href="javascript:void(0);" class="customer"></a>
+				<a href="javascript:void(0);" class="gotop"></a>
+			</div>
+			<div class="nav-content">
+				<div class="customer-qrcode"> <img src="http://www.8848phone.com/public/m3/images/customer_qrcode.png?ver=2"> </div>
+			</div>
+		</div>
+		<div class="gray-bg"></div>
+		<div class="denglu">
+			<div class="inset">
+				<div class="login-head">
+					<h1>登录</h1>
+					<div class="close"></div>
+				</div>
+				<div class="indi">
+					<input maxlength="8" placeholder="账号" autofocus>
+				</div>
+				<div class="indi">
+					<input maxlength="10" type="password" placeholder="密码">
+				</div>
+				<button class="wwc lll">登录</button>
+				<button class="wwc ccc">注册</button>
+			</div>
+		</div>
+		<script src="js/top.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/M5.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$.ajax({
+				type: "get",
+				url: "json/list3.json",
+				async: false,
+				success: function(data) {
+					$.each(data.M5img, function(i, v) {
+						$("<div>").addClass("P1").appendTo(".M53")
+						$("<img>").attr("src", v).appendTo($(".P1").eq(i))
+					})
+					$(".P1").eq(0).css("position", "relative")
+					$("<div class='carousel-inner'>").html($("<ul class='lai' style='display:block;'>")).appendTo($(".P1").eq(0))
+					$("<div class='carousel-indicators'>").appendTo($(".P1").eq(0))
+					$.each(data.M5lbt, function(i, v) {
+						$("<li class='picbo1'>").html($("<img>").attr({
+							"src": v,
+							"width": "100%",
+							"height": "auto"
+						})).appendTo(".carousel-inner>ul")[i];
+						$("<a href='javascript:void(0);' class='opb1'>").appendTo(".carousel-indicators")[i]
+					})
+					$("<div class='carou-inner'>").html($("<a href='javascript:' class='prev'>")).appendTo(".carousel-inner")
+					$("<a href='javascript:' class='next'>").appendTo(".carou-inner")
+					$(".opb1").eq(0).css("background", "url(" + data.M5lbtd[1] + ")")
+					$(".opb1:last").remove()
+					var i = 0
+					qwe()
+					$(".opb1").click(function() {
+						clearInterval(tmit)
+						var we = $(this).index()
+						i = we;
+						$(".lai").animate({
+							left: -i * $(".picbo1").width()
+						}, 500)
+						$(".opb1").css("background", "url(" + data.M5lbtd[0] + ")");
+						$(this).css("background", "url(" + data.M5lbtd[1] + ")");
+						qwe()
+					})
+					$(".prev").click(function() {
+						clearInterval(tmit)
+						i--
+						if(i < 0) {
+							i = $(".picbo1").length - 2
+							$(".lai").css("left", -3 * $(".picbo1").width())
+						}
+						$(".lai").animate({
+							left: -i * $(".picbo1").width()
+						}, 500)
+						$(".opb1").css("background", "url(" + data.M5lbtd[0] + ")")
+						$(".opb1").eq(i).css("background", "url(" + data.M5lbtd[1] + ")")
+						qwe()
+					})
+					$(".next").click(function() {
+						clearInterval(tmit)
+						i++
+						$(".opb1").css("background", "url(" + data.M5lbtd[0] + ")")
+						if(i == 3) {
+							$(".opb1").eq(0).css("background", "url(" + data.M5lbtd[1] + ")")
+						}
+						if(i == 4) {
+							$(".lai").css("left", 0)
+							i = 1
+						}
+						$(".lai").animate({
+							left: -i * $(".picbo1").width()
+						}, 500)
+						$(".opb1").eq(i).css("background", "url(" + data.M5lbtd[1] + ")")
+						qwe()
+					})
+
+					function qwe() {
+						tmit = setInterval(function() {
+							i++
+							$(".opb1").css("background", "url(" + data.M5lbtd[0] + ")")
+							if(i == 3) {
+								$(".opb1").eq(0).css("background", "url(" + data.M5lbtd[1] + ")")
+							}
+							if(i == 4) {
+								$(".lai").css("left", 0)
+								i = 1
+							}
+							$(".lai").animate({
+								left: -i * $(".picbo1").width()
+							}, 500)
+							$(".opb1").eq(i).css("background", "url(" + data.M5lbtd[1] + ")")
+						}, 3000)
+					}
+					$("<div class='ErWeiMa'>").html($("<a href="+data.M5buy+">")).appendTo(".P1:last").click(function(){
+						alert("网页还在开发中")
+					})
+				}
+			})
+		</script>
+	</body>
+</html>

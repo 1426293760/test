@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>8848钛金手机官网</title>
+		<link href="http://www.8848phone.com/favicon.ico" type="image/x-icon" rel="shortcut icon">
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/top.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/brand.min.css" />
+		<style type="text/css">
+			img{min-width:auto;}
+			.M-brand1{background-color:#0C0B0B;padding-bottom:5px;}
+			.b2 {width:1168px;height:1378px;margin:95px auto;}
+			.article{width:100%;margin:0;}
+			.first-child{height:522px;position:relative;}
+			.b2.article.cert{font-size:17px;line-height:30px;color:#D9D9D9;}
+			.b2 .first-child .cert{width:391px;position:absolute;left:60px;top:180px;font-size:17px;line-height:30px;color:#D9D9D9;}
+			.article.text{width:100%;height:356px;position:relative;}
+			.article.text .cert{position:absolute;width:700px;left:245px;top:130px;font-size:17px;line-height:30px;color:#D9D9D9;}
+			.article.last-child{width:1168px;height:500px;}
+			.last-child .io{width:1168px;height:310px;}
+			.last-child .cert{font-size:17px;line-height:30px;color:#D9D9D9;margin-top:80px;margin-left:245px;width:712px;}
+			.last-child .cert p{margin-bottom:20px;}
+		</style>
+	</head>
+	<body>
+		<div class="M-header">
+			<div class="row">
+				<a href="index.html" class="logo"></a>
+				<div class="nav">
+					<ul class="active"></ul>
+				</div>
+			</div>
+			<div class="brand-subnav">
+				<div class="subnav">
+					<ul class="clearfix1"></ul>
+				</div>
+			</div>
+		</div>
+		<div class="M-brand1">
+			<div class="topic-pic"></div>
+			<div class="b2"></div>
+		</div>
+		<div class="M-footer">
+			<div class="foot-nav">
+				<div class="row clear">
+					<ul class="clear left"></ul>
+					<div class="hotline right"> <label>咨询热线：</label>400-168-8848
+						<p>周一至周日<span>每日8:00-21:00</span>全年无休</p>
+					</div>
+				</div>
+			</div>
+			<div class="copyright">
+				<div class="row clearia">
+					<div class="left"> 北京珠穆朗玛移动通信有限公司 <span>联系电话：010-83189000</span> 京ICP备17002814号-1 京网文[2018]0621-066号 </div>
+				</div>
+			</div>
+		</div>
+		<div class="tools-bar" style="display:block;">
+			<div class="nav">
+				<a href="javascript:void(0);" class="customer"></a>
+				<a href="javascript:void(0);" class="gotop"></a>
+			</div>
+			<div class="nav-content">
+				<div class="customer-qrcode"> <img src="http://www.8848phone.com/public/m3/images/customer_qrcode.png?ver=2"> </div>
+			</div>
+		</div>
+		<div class="gray-bg"></div>
+		<div class="denglu">
+			<div class="inset">
+				<div class="login-head">
+					<h1>登录</h1>
+					<div class="close"></div>
+				</div>
+				<div class="indi">
+					<input maxlength="8" placeholder="账号" autofocus>
+				</div>
+				<div class="indi">
+					<input maxlength="10" type="password" placeholder="密码">
+				</div>
+				<button class="wwc lll">登录</button>
+				<button class="wwc ccc">注册</button>
+			</div>
+		</div>
+		<script src="js/top.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/brand.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$.ajax({
+				type: "get",
+				url: "json/brand1.json",
+				async: false,
+				success: function(data) {
+					$(".ion img").attr("src", data.hevImg)
+					$(".coent .title").html(data.hevTit)
+					$(".coent .description").html(data.hevTxt)
+					$("<div class='article first-child'>").html($("<div class='io'>").html($("<img src='" + data.b2img1 + "'>"))).appendTo(".b2")
+					$("<div class='cert'>").html(data.b2txt1).appendTo(".first-child")
+					$("<div class='article text'>").html($("<div class='cert'>").html(data.b2txt2)).appendTo(".b2")
+					$("<div class='article last-child'>").html($("<div class='io clearfix'>").html($("<img class='left' src='" + data.b2img2 + "' width='412' height='310'>"))).appendTo(".b2")
+					$("<img class='right' src='" + data.b2img3 + "' width='734' height='310'>").appendTo(".last-child .io")
+					$("<div class='cert'>").html($("<p>").html(data.b2txt31)).appendTo(".last-child")
+					$("<p>").html(data.b2txt32).appendTo(".last-child .cert")
+				}
+			});
+		</script>
+	</body>
+</html>

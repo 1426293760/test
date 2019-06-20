@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>8848钛金手机官网</title>
+		<link href="http://www.8848phone.com/favicon.ico" type="image/x-icon" rel="shortcut icon">
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/top.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/M5.min.css" />
+		<style type="text/css">
+			.conent{width:1200px;height:713px;position:relative;}
+			.conent a.buy-btn{top:430px;left:750px;}
+		</style>
+	</head>
+	<body>
+		<div class="M-header">
+			<div class="row">
+				<a href="index.html" class="logo"></a>
+				<div class="nav">
+					<ul class="active"></ul>
+				</div>
+			</div>
+			<div class="brand-subnav">
+				<div class="subnav">
+					<ul class="clearfix1"></ul>
+				</div>
+			</div>
+		</div>
+		<div class="M51"> </div>
+		<div class="M-footer">
+			<div class="foot-nav">
+				<div class="row clear">
+					<ul class="clear left"></ul>
+					<div class="hotline right"> <label>咨询热线：</label>400-168-8848
+						<p>周一至周日<span>每日8:00-21:00</span>全年无休</p>
+					</div>
+				</div>
+			</div>
+			<div class="copyright">
+				<div class="row clearia">
+					<div class="left"> 北京珠穆朗玛移动通信有限公司 <span>联系电话：010-83189000</span> 京ICP备17002814号-1 京网文[2018]0621-066号 </div>
+				</div>
+			</div>
+		</div>
+		<div class="tools-bar" style="display:block;">
+			<div class="nav">
+				<a href="javascript:void(0);" class="customer"></a>
+				<a href="javascript:void(0);" class="gotop"></a>
+			</div>
+			<div class="nav-content">
+				<div class="customer-qrcode"> <img src="http://www.8848phone.com/public/m3/images/customer_qrcode.png?ver=2"> </div>
+			</div>
+		</div>
+		<div class="gray-bg"></div>
+		<div class="denglu">
+			<div class="inset">
+				<div class="login-head">
+					<h1>登录</h1>
+					<div class="close"></div>
+				</div>
+				<div class="indi">
+					<input maxlength="8" placeholder="账号" autofocus>
+				</div>
+				<div class="indi">
+					<input maxlength="10" type="password" placeholder="密码">
+				</div>
+				<button class="wwc lll">登录</button>
+				<button class="wwc ccc">注册</button>
+			</div>
+		</div>
+		<script src="js/top.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/M5.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$.ajax({
+				type: "get",
+				url: "json/list1.json",
+				async: false,
+				success: function(data) {
+					$.each(data.M5img, function(i, v) {
+						$("<div>").addClass("m5-ruizhi-" + i).css({"width": "100%","height": parseInt(data.M5hei[i]),"background": "url(" + v + ") top center no-repeat"}).appendTo(".M51")
+					})
+					$("<div class='conent'>").appendTo(".m5-ruizhi-6")
+					$("<a class='buy-btn'>").attr("href", data.M5buy).html("立即订购").appendTo(".conent")
+					$(".buy-btn").hover(function() {
+						$(this).css("opacity", 0.8)
+					}, function() {
+						$(this).css("opacity", 1)
+					}).click(function(){
+						alert("网页还在开发中")
+					})
+				}
+			})
+		</script>
+	</body>
+</html>
